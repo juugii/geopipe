@@ -1,0 +1,1 @@
+issue with downlad, NCBU fastq seem broke, \n only one read in ENA (99 nt..); edited manual download and checking. total size is more than 330 Gio
