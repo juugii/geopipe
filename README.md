@@ -20,6 +20,14 @@ Preprocess and integration outputs includes:
 <img src="img/UMAP_genotype.png" height="400" align="center">
 <img src="img/UMAP_clusters.png" height="400" align="center">
 
+```bash
+$ ll readCountMatrix_GSE135194.csv 
+-r-------- 1 user user 3.9G Mar 25 18:03 readCountMatrix_GSE135194.csv
+
+$ md5sum readCountMatrix_GSE135194.csv 
+42adbbbc83618f3ae1eb21511c2ef5fc  readCountMatrix_GSE135194.csv
+```
+
 ### Caveats
 
 #### Dataset size

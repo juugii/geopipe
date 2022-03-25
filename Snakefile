@@ -162,7 +162,7 @@ rule integrate:
 		file = "outs/seurat/integrated/seu_int_"+config["gse"]+".seurat",
 		plot = "outs/seurat/integrated/UMAPs_"+config["gse"]+".pdf",
 		log = "outs/seurat/integrated/integration_"+config["gse"]+".log"
-		matrix = "outs/seurat/integrated/readCountMatrix_"+config["gse"]+".csv"
+		matrix = protected("outs/seurat/integrated/readCountMatrix_"+config["gse"]+".csv")
 	threads: 32
 	params:
 		gse = config.get("gse")
