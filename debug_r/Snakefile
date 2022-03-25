@@ -1,0 +1,36 @@
+configfile: "config.yaml"
+
+MAPPED=glob_wildcards("data/cr_{map}/outs/filtered_feature_bc_matrix.h5").map
+print("Mapped samples are: ", MAPPED)
+rule all:
+	input:
+		expand("data/cr_{smp}/outs/filtered_feature_bc_matrix.h5", smp=MAPPED)
+		# "outs/seurat/integrated/UMAPs_"+config["gse"]+".pdf"
+
+rule preprocess:
+	input:
+		"data/cr_{sample}/outs/filtered_feature_bc_matrix.h5"
+	output:
+		file="outs/seurat/{sample}.seurat",
+		plot="outs/seurat/UMAP_{sample}.pdf",
+		log="outs/seurat/ppseurat_{sample}.log"
+	threads: 16
+	script:
+		"scripts/postprocess.R"
+
+
+PPED=glob_wildcards("outs/seurat/{pp}.seurat").pp
+print("Preprocessed samples are: ", PPED)
+print("GSE is :", config["gse"])
+rule integrate:
+	input:
+		list = expand("outs/seurat/{pp}.seurat", pp=PPED)
+	output:
+		file = "outs/seurat/integrated/seu_int_"+config["gse"]+".seurat",
+		plot = "outs/seurat/integrated/UMAPs_"+config["gse"]+".pdf",
+		log = "outs/seurat/integrated/integration_"+config["gse"]+".log"
+	threads: 32
+	params:
+		gse = config.get("gse")
+	script:
+		"scripts/merging.R"
