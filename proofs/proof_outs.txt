@@ -1,0 +1,47 @@
+outs/
+└── seurat
+    ├── integrated
+    │   ├── integration_GSE135194.log
+    │   ├── seu_int_GSE135194.seurat
+    │   └── UMAPs_GSE135194.pdf
+    ├── ppseurat_SRR9875279.log
+    ├── ppseurat_SRR9875280.log
+    ├── ppseurat_SRR9875281.log
+    ├── ppseurat_SRR9875282.log
+    ├── ppseurat_SRR9875283.log
+    ├── ppseurat_SRR9875284.log
+    ├── ppseurat_SRR9875285.log
+    ├── ppseurat_SRR9875286.log
+    ├── ppseurat_SRR9875287.log
+    ├── ppseurat_SRR9875288.log
+    ├── ppseurat_SRR9875289.log
+    ├── ppseurat_SRR9875290.log
+    ├── ppseurat_SRR9875291.log
+    ├── SRR9875279.seurat
+    ├── SRR9875280.seurat
+    ├── SRR9875281.seurat
+    ├── SRR9875282.seurat
+    ├── SRR9875283.seurat
+    ├── SRR9875284.seurat
+    ├── SRR9875285.seurat
+    ├── SRR9875286.seurat
+    ├── SRR9875287.seurat
+    ├── SRR9875288.seurat
+    ├── SRR9875289.seurat
+    ├── SRR9875290.seurat
+    ├── SRR9875291.seurat
+    ├── UMAP_SRR9875279.pdf
+    ├── UMAP_SRR9875280.pdf
+    ├── UMAP_SRR9875281.pdf
+    ├── UMAP_SRR9875282.pdf
+    ├── UMAP_SRR9875283.pdf
+    ├── UMAP_SRR9875284.pdf
+    ├── UMAP_SRR9875285.pdf
+    ├── UMAP_SRR9875286.pdf
+    ├── UMAP_SRR9875287.pdf
+    ├── UMAP_SRR9875288.pdf
+    ├── UMAP_SRR9875289.pdf
+    ├── UMAP_SRR9875290.pdf
+    └── UMAP_SRR9875291.pdf
+
+2 directories, 42 files
