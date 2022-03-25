@@ -2,16 +2,32 @@
 
 A pipeline to process scRNAseq data from GEO datasets.
 
+### Methodology
+
+<img src="img/pipe.svg" height="500" align="center">
+
 ## POC process of GSE135194
 
-Dataset source is [here](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE135194): HSCPs from HD and GATA2 deficiency patients.
+### Outputs
 
-## Caveats
+Download, dump and mapping output tree is [here](proofs/proof_seq.txt). Postprocessing output is [here](proofs/proof_outs.txt).
 
-### Dataset size
+Preprocess and integration outputs includes:
 
-13 samples, there are potential issues during SRA dump (it could be necessary to download / dump seqfiles **again** in case of uncomplete / broken fastq, check any ERROR.log in the root directory, and start the pipeline again). Pipeline process peaks at more than 2 Tio of storage: watch out volumetric issues.
+<img src="img/UMAP_samples.png" height="400" align="center">
+<img src="img/UMAP_genotype.png" height="400" align="center">
+<img src="img/UMAP_clusters.png" height="400" align="center">
 
-### Processing time
+Dataset source is [here](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE135194): HSCPs from HD and GATA2 deficient patients.
 
+### Caveats
 
+#### Dataset size
+
+13 samples, there are potential issues during SRA download & dump (it could be necessary to download / dump seqfiles **again** in case of uncomplete / broken fastq, check any ERROR.log in the root directory, and start the pipeline again). Pipeline process peaks at more than **2 Tio** of storage: **watch out** any volumetric/storage issues.
+
+#### Processing time
+
+Preprocessing and mapping takes **5-6 hours** per sample.
+
+<img src="img/time.svg" height="250" align="center">
