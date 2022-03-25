@@ -6,6 +6,7 @@ gse <- snakemake@params[['gse']]
 outz <- snakemake@output[["file"]]
 figz <- snakemake@output[["plot"]]
 logz <- snakemake@output[["log"]]
+countz <- snakemake@output[["matrix"]]
 
 # outz = paste0("outs/seurat/integrated/seu_int_", gse, ".seurat")
 # figz = paste0("outs/seurat/integrated/UMAPs_", gse, ".pdf")
@@ -53,6 +54,10 @@ pdf(figz)
 dev.off()
 
 saveRDS(seu_int, outz)
+
+# export read count matrix
+mat <- GetAssayData(seu_int, slot = 'counts', assay = "RNA")
+write.csv(as.matrix(mat), file = countz)
 
 print("Done.")
 sessionInfo()

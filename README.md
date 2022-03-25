@@ -6,7 +6,9 @@ A pipeline to process scRNAseq data from GEO datasets.
 
 <img src="img/pipe.svg" height="500" align="center">
 
-## POC process of GSE135194
+## Proof-of-concept: processing of GSE135194
+
+Dataset source is [here](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE135194): HSCPs from HD and GATA2 deficient patients.
 
 ### Outputs
 
@@ -17,8 +19,6 @@ Preprocess and integration outputs includes:
 <img src="img/UMAP_samples.png" height="400" align="center">
 <img src="img/UMAP_genotype.png" height="400" align="center">
 <img src="img/UMAP_clusters.png" height="400" align="center">
-
-Dataset source is [here](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE135194): HSCPs from HD and GATA2 deficient patients.
 
 ### Caveats
 
