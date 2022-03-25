@@ -1,3 +1,7 @@
 data/*
 ref/*
 outs/*
+debug_r/
+dev_dl/
+dev_meta/
+snake_valid.txt
