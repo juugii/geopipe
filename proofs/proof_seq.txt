@@ -1,0 +1,570 @@
+data/
+├── config.yaml
+├── crmap_SRR9875279.log
+├── crmap_SRR9875280.log
+├── crmap_SRR9875281.log
+├── crmap_SRR9875282.log
+├── crmap_SRR9875283.log
+├── crmap_SRR9875284.log
+├── crmap_SRR9875285.log
+├── crmap_SRR9875286.log
+├── crmap_SRR9875287.log
+├── crmap_SRR9875288.log
+├── crmap_SRR9875289.log
+├── crmap_SRR9875290.log
+├── crmap_SRR9875291.log
+├── cr_SRR9875279
+│   ├── _cmdline
+│   ├── cr_SRR9875279.mri.tgz
+│   ├── _filelist
+│   ├── _finalstate
+│   ├── _invocation
+│   ├── _jobmode
+│   ├── _log
+│   ├── _mrosource
+│   ├── outs
+│   │   ├── analysis
+│   │   ├── cloupe.cloupe
+│   │   ├── filtered_feature_bc_matrix
+│   │   ├── filtered_feature_bc_matrix.h5
+│   │   ├── metrics_summary.csv
+│   │   ├── molecule_info.h5
+│   │   ├── possorted_genome_bam.bam
+│   │   ├── possorted_genome_bam.bam.bai
+│   │   ├── raw_feature_bc_matrix
+│   │   ├── raw_feature_bc_matrix.h5
+│   │   └── web_summary.html
+│   ├── _perf
+│   ├── SC_RNA_COUNTER_CS
+│   │   ├── CELLRANGER_PREFLIGHT
+│   │   ├── CELLRANGER_PREFLIGHT_LOCAL
+│   │   ├── fork0
+│   │   ├── FULL_COUNT_INPUTS
+│   │   ├── SC_MULTI_CORE
+│   │   ├── _STRUCTIFY
+│   │   └── WRITE_GENE_INDEX
+│   ├── _sitecheck
+│   ├── _tags
+│   ├── _timestamp
+│   ├── _uuid
+│   ├── _vdrkill
+│   └── _versions
+├── cr_SRR9875280
+│   ├── _cmdline
+│   ├── cr_SRR9875280.mri.tgz
+│   ├── _filelist
+│   ├── _finalstate
+│   ├── _invocation
+│   ├── _jobmode
+│   ├── _log
+│   ├── _mrosource
+│   ├── outs
+│   │   ├── analysis
+│   │   ├── cloupe.cloupe
+│   │   ├── filtered_feature_bc_matrix
+│   │   ├── filtered_feature_bc_matrix.h5
+│   │   ├── metrics_summary.csv
+│   │   ├── molecule_info.h5
+│   │   ├── possorted_genome_bam.bam
+│   │   ├── possorted_genome_bam.bam.bai
+│   │   ├── raw_feature_bc_matrix
+│   │   ├── raw_feature_bc_matrix.h5
+│   │   └── web_summary.html
+│   ├── _perf
+│   ├── SC_RNA_COUNTER_CS
+│   │   ├── CELLRANGER_PREFLIGHT
+│   │   ├── CELLRANGER_PREFLIGHT_LOCAL
+│   │   ├── fork0
+│   │   ├── FULL_COUNT_INPUTS
+│   │   ├── SC_MULTI_CORE
+│   │   ├── _STRUCTIFY
+│   │   └── WRITE_GENE_INDEX
+│   ├── _sitecheck
+│   ├── _tags
+│   ├── _timestamp
+│   ├── _uuid
+│   ├── _vdrkill
+│   └── _versions
+├── cr_SRR9875281
+│   ├── _cmdline
+│   ├── cr_SRR9875281.mri.tgz
+│   ├── _filelist
+│   ├── _finalstate
+│   ├── _invocation
+│   ├── _jobmode
+│   ├── _log
+│   ├── _mrosource
+│   ├── outs
+│   │   ├── analysis
+│   │   ├── cloupe.cloupe
+│   │   ├── filtered_feature_bc_matrix
+│   │   ├── filtered_feature_bc_matrix.h5
+│   │   ├── metrics_summary.csv
+│   │   ├── molecule_info.h5
+│   │   ├── possorted_genome_bam.bam
+│   │   ├── possorted_genome_bam.bam.bai
+│   │   ├── raw_feature_bc_matrix
+│   │   ├── raw_feature_bc_matrix.h5
+│   │   └── web_summary.html
+│   ├── _perf
+│   ├── SC_RNA_COUNTER_CS
+│   │   ├── CELLRANGER_PREFLIGHT
+│   │   ├── CELLRANGER_PREFLIGHT_LOCAL
+│   │   ├── fork0
+│   │   ├── FULL_COUNT_INPUTS
+│   │   ├── SC_MULTI_CORE
+│   │   ├── _STRUCTIFY
+│   │   └── WRITE_GENE_INDEX
+│   ├── _sitecheck
+│   ├── _tags
+│   ├── _timestamp
+│   ├── _uuid
+│   ├── _vdrkill
+│   └── _versions
+├── cr_SRR9875282
+│   ├── _cmdline
+│   ├── cr_SRR9875282.mri.tgz
+│   ├── _filelist
+│   ├── _finalstate
+│   ├── _invocation
+│   ├── _jobmode
+│   ├── _log
+│   ├── _mrosource
+│   ├── outs
+│   │   ├── analysis
+│   │   ├── cloupe.cloupe
+│   │   ├── filtered_feature_bc_matrix
+│   │   ├── filtered_feature_bc_matrix.h5
+│   │   ├── metrics_summary.csv
+│   │   ├── molecule_info.h5
+│   │   ├── possorted_genome_bam.bam
+│   │   ├── possorted_genome_bam.bam.bai
+│   │   ├── raw_feature_bc_matrix
+│   │   ├── raw_feature_bc_matrix.h5
+│   │   └── web_summary.html
+│   ├── _perf
+│   ├── SC_RNA_COUNTER_CS
+│   │   ├── CELLRANGER_PREFLIGHT
+│   │   ├── CELLRANGER_PREFLIGHT_LOCAL
+│   │   ├── fork0
+│   │   ├── FULL_COUNT_INPUTS
+│   │   ├── SC_MULTI_CORE
+│   │   ├── _STRUCTIFY
+│   │   └── WRITE_GENE_INDEX
+│   ├── _sitecheck
+│   ├── _tags
+│   ├── _timestamp
+│   ├── _uuid
+│   ├── _vdrkill
+│   └── _versions
+├── cr_SRR9875283
+│   ├── _cmdline
+│   ├── cr_SRR9875283.mri.tgz
+│   ├── _filelist
+│   ├── _finalstate
+│   ├── _invocation
+│   ├── _jobmode
+│   ├── _log
+│   ├── _mrosource
+│   ├── outs
+│   │   ├── analysis
+│   │   ├── cloupe.cloupe
+│   │   ├── filtered_feature_bc_matrix
+│   │   ├── filtered_feature_bc_matrix.h5
+│   │   ├── metrics_summary.csv
+│   │   ├── molecule_info.h5
+│   │   ├── possorted_genome_bam.bam
+│   │   ├── possorted_genome_bam.bam.bai
+│   │   ├── raw_feature_bc_matrix
+│   │   ├── raw_feature_bc_matrix.h5
+│   │   └── web_summary.html
+│   ├── _perf
+│   ├── SC_RNA_COUNTER_CS
+│   │   ├── CELLRANGER_PREFLIGHT
+│   │   ├── CELLRANGER_PREFLIGHT_LOCAL
+│   │   ├── fork0
+│   │   ├── FULL_COUNT_INPUTS
+│   │   ├── SC_MULTI_CORE
+│   │   ├── _STRUCTIFY
+│   │   └── WRITE_GENE_INDEX
+│   ├── _sitecheck
+│   ├── _tags
+│   ├── _timestamp
+│   ├── _uuid
+│   ├── _vdrkill
+│   └── _versions
+├── cr_SRR9875284
+│   ├── _cmdline
+│   ├── cr_SRR9875284.mri.tgz
+│   ├── _filelist
+│   ├── _finalstate
+│   ├── _invocation
+│   ├── _jobmode
+│   ├── _log
+│   ├── _mrosource
+│   ├── outs
+│   │   ├── analysis
+│   │   ├── cloupe.cloupe
+│   │   ├── filtered_feature_bc_matrix
+│   │   ├── filtered_feature_bc_matrix.h5
+│   │   ├── metrics_summary.csv
+│   │   ├── molecule_info.h5
+│   │   ├── possorted_genome_bam.bam
+│   │   ├── possorted_genome_bam.bam.bai
+│   │   ├── raw_feature_bc_matrix
+│   │   ├── raw_feature_bc_matrix.h5
+│   │   └── web_summary.html
+│   ├── _perf
+│   ├── SC_RNA_COUNTER_CS
+│   │   ├── CELLRANGER_PREFLIGHT
+│   │   ├── CELLRANGER_PREFLIGHT_LOCAL
+│   │   ├── fork0
+│   │   ├── FULL_COUNT_INPUTS
+│   │   ├── SC_MULTI_CORE
+│   │   ├── _STRUCTIFY
+│   │   └── WRITE_GENE_INDEX
+│   ├── _sitecheck
+│   ├── _tags
+│   ├── _timestamp
+│   ├── _uuid
+│   ├── _vdrkill
+│   └── _versions
+├── cr_SRR9875285
+│   ├── _cmdline
+│   ├── cr_SRR9875285.mri.tgz
+│   ├── _filelist
+│   ├── _finalstate
+│   ├── _invocation
+│   ├── _jobmode
+│   ├── _log
+│   ├── _mrosource
+│   ├── outs
+│   │   ├── analysis
+│   │   ├── cloupe.cloupe
+│   │   ├── filtered_feature_bc_matrix
+│   │   ├── filtered_feature_bc_matrix.h5
+│   │   ├── metrics_summary.csv
+│   │   ├── molecule_info.h5
+│   │   ├── possorted_genome_bam.bam
+│   │   ├── possorted_genome_bam.bam.bai
+│   │   ├── raw_feature_bc_matrix
+│   │   ├── raw_feature_bc_matrix.h5
+│   │   └── web_summary.html
+│   ├── _perf
+│   ├── SC_RNA_COUNTER_CS
+│   │   ├── CELLRANGER_PREFLIGHT
+│   │   ├── CELLRANGER_PREFLIGHT_LOCAL
+│   │   ├── fork0
+│   │   ├── FULL_COUNT_INPUTS
+│   │   ├── SC_MULTI_CORE
+│   │   ├── _STRUCTIFY
+│   │   └── WRITE_GENE_INDEX
+│   ├── _sitecheck
+│   ├── _tags
+│   ├── _timestamp
+│   ├── _uuid
+│   ├── _vdrkill
+│   └── _versions
+├── cr_SRR9875286
+│   ├── _cmdline
+│   ├── cr_SRR9875286.mri.tgz
+│   ├── _filelist
+│   ├── _finalstate
+│   ├── _invocation
+│   ├── _jobmode
+│   ├── _log
+│   ├── _mrosource
+│   ├── outs
+│   │   ├── analysis
+│   │   ├── cloupe.cloupe
+│   │   ├── filtered_feature_bc_matrix
+│   │   ├── filtered_feature_bc_matrix.h5
+│   │   ├── metrics_summary.csv
+│   │   ├── molecule_info.h5
+│   │   ├── possorted_genome_bam.bam
+│   │   ├── possorted_genome_bam.bam.bai
+│   │   ├── raw_feature_bc_matrix
+│   │   ├── raw_feature_bc_matrix.h5
+│   │   └── web_summary.html
+│   ├── _perf
+│   ├── SC_RNA_COUNTER_CS
+│   │   ├── CELLRANGER_PREFLIGHT
+│   │   ├── CELLRANGER_PREFLIGHT_LOCAL
+│   │   ├── fork0
+│   │   ├── FULL_COUNT_INPUTS
+│   │   ├── SC_MULTI_CORE
+│   │   ├── _STRUCTIFY
+│   │   └── WRITE_GENE_INDEX
+│   ├── _sitecheck
+│   ├── _tags
+│   ├── _timestamp
+│   ├── _uuid
+│   ├── _vdrkill
+│   └── _versions
+├── cr_SRR9875287
+│   ├── _cmdline
+│   ├── cr_SRR9875287.mri.tgz
+│   ├── _filelist
+│   ├── _finalstate
+│   ├── _invocation
+│   ├── _jobmode
+│   ├── _log
+│   ├── _mrosource
+│   ├── outs
+│   │   ├── analysis
+│   │   ├── cloupe.cloupe
+│   │   ├── filtered_feature_bc_matrix
+│   │   ├── filtered_feature_bc_matrix.h5
+│   │   ├── metrics_summary.csv
+│   │   ├── molecule_info.h5
+│   │   ├── possorted_genome_bam.bam
+│   │   ├── possorted_genome_bam.bam.bai
+│   │   ├── raw_feature_bc_matrix
+│   │   ├── raw_feature_bc_matrix.h5
+│   │   └── web_summary.html
+│   ├── _perf
+│   ├── SC_RNA_COUNTER_CS
+│   │   ├── CELLRANGER_PREFLIGHT
+│   │   ├── CELLRANGER_PREFLIGHT_LOCAL
+│   │   ├── fork0
+│   │   ├── FULL_COUNT_INPUTS
+│   │   ├── SC_MULTI_CORE
+│   │   ├── _STRUCTIFY
+│   │   └── WRITE_GENE_INDEX
+│   ├── _sitecheck
+│   ├── _tags
+│   ├── _timestamp
+│   ├── _uuid
+│   ├── _vdrkill
+│   └── _versions
+├── cr_SRR9875288
+│   ├── _cmdline
+│   ├── cr_SRR9875288.mri.tgz
+│   ├── _filelist
+│   ├── _finalstate
+│   ├── _invocation
+│   ├── _jobmode
+│   ├── _log
+│   ├── _mrosource
+│   ├── outs
+│   │   ├── analysis
+│   │   ├── cloupe.cloupe
+│   │   ├── filtered_feature_bc_matrix
+│   │   ├── filtered_feature_bc_matrix.h5
+│   │   ├── metrics_summary.csv
+│   │   ├── molecule_info.h5
+│   │   ├── possorted_genome_bam.bam
+│   │   ├── possorted_genome_bam.bam.bai
+│   │   ├── raw_feature_bc_matrix
+│   │   ├── raw_feature_bc_matrix.h5
+│   │   └── web_summary.html
+│   ├── _perf
+│   ├── SC_RNA_COUNTER_CS
+│   │   ├── CELLRANGER_PREFLIGHT
+│   │   ├── CELLRANGER_PREFLIGHT_LOCAL
+│   │   ├── fork0
+│   │   ├── FULL_COUNT_INPUTS
+│   │   ├── SC_MULTI_CORE
+│   │   ├── _STRUCTIFY
+│   │   └── WRITE_GENE_INDEX
+│   ├── _sitecheck
+│   ├── _tags
+│   ├── _timestamp
+│   ├── _uuid
+│   ├── _vdrkill
+│   └── _versions
+├── cr_SRR9875289
+│   ├── _cmdline
+│   ├── cr_SRR9875289.mri.tgz
+│   ├── _filelist
+│   ├── _finalstate
+│   ├── _invocation
+│   ├── _jobmode
+│   ├── _log
+│   ├── _mrosource
+│   ├── outs
+│   │   ├── analysis
+│   │   ├── cloupe.cloupe
+│   │   ├── filtered_feature_bc_matrix
+│   │   ├── filtered_feature_bc_matrix.h5
+│   │   ├── metrics_summary.csv
+│   │   ├── molecule_info.h5
+│   │   ├── possorted_genome_bam.bam
+│   │   ├── possorted_genome_bam.bam.bai
+│   │   ├── raw_feature_bc_matrix
+│   │   ├── raw_feature_bc_matrix.h5
+│   │   └── web_summary.html
+│   ├── _perf
+│   ├── SC_RNA_COUNTER_CS
+│   │   ├── CELLRANGER_PREFLIGHT
+│   │   ├── CELLRANGER_PREFLIGHT_LOCAL
+│   │   ├── fork0
+│   │   ├── FULL_COUNT_INPUTS
+│   │   ├── SC_MULTI_CORE
+│   │   ├── _STRUCTIFY
+│   │   └── WRITE_GENE_INDEX
+│   ├── _sitecheck
+│   ├── _tags
+│   ├── _timestamp
+│   ├── _uuid
+│   ├── _vdrkill
+│   └── _versions
+├── cr_SRR9875290
+│   ├── _cmdline
+│   ├── cr_SRR9875290.mri.tgz
+│   ├── _filelist
+│   ├── _finalstate
+│   ├── _invocation
+│   ├── _jobmode
+│   ├── _log
+│   ├── _mrosource
+│   ├── outs
+│   │   ├── analysis
+│   │   ├── cloupe.cloupe
+│   │   ├── filtered_feature_bc_matrix
+│   │   ├── filtered_feature_bc_matrix.h5
+│   │   ├── metrics_summary.csv
+│   │   ├── molecule_info.h5
+│   │   ├── possorted_genome_bam.bam
+│   │   ├── possorted_genome_bam.bam.bai
+│   │   ├── raw_feature_bc_matrix
+│   │   ├── raw_feature_bc_matrix.h5
+│   │   └── web_summary.html
+│   ├── _perf
+│   ├── SC_RNA_COUNTER_CS
+│   │   ├── CELLRANGER_PREFLIGHT
+│   │   ├── CELLRANGER_PREFLIGHT_LOCAL
+│   │   ├── fork0
+│   │   ├── FULL_COUNT_INPUTS
+│   │   ├── SC_MULTI_CORE
+│   │   ├── _STRUCTIFY
+│   │   └── WRITE_GENE_INDEX
+│   ├── _sitecheck
+│   ├── _tags
+│   ├── _timestamp
+│   ├── _uuid
+│   ├── _vdrkill
+│   └── _versions
+├── cr_SRR9875291
+│   ├── _cmdline
+│   ├── cr_SRR9875291.mri.tgz
+│   ├── _filelist
+│   ├── _finalstate
+│   ├── _invocation
+│   ├── _jobmode
+│   ├── _log
+│   ├── _mrosource
+│   ├── outs
+│   │   ├── analysis
+│   │   ├── cloupe.cloupe
+│   │   ├── filtered_feature_bc_matrix
+│   │   ├── filtered_feature_bc_matrix.h5
+│   │   ├── metrics_summary.csv
+│   │   ├── molecule_info.h5
+│   │   ├── possorted_genome_bam.bam
+│   │   ├── possorted_genome_bam.bam.bai
+│   │   ├── raw_feature_bc_matrix
+│   │   ├── raw_feature_bc_matrix.h5
+│   │   └── web_summary.html
+│   ├── _perf
+│   ├── SC_RNA_COUNTER_CS
+│   │   ├── CELLRANGER_PREFLIGHT
+│   │   ├── CELLRANGER_PREFLIGHT_LOCAL
+│   │   ├── fork0
+│   │   ├── FULL_COUNT_INPUTS
+│   │   ├── SC_MULTI_CORE
+│   │   ├── _STRUCTIFY
+│   │   └── WRITE_GENE_INDEX
+│   ├── _sitecheck
+│   ├── _tags
+│   ├── _timestamp
+│   ├── _uuid
+│   ├── _vdrkill
+│   └── _versions
+├── emat
+│   ├── GSE135194.csv.gz
+│   └── UMAP_GSE135194.pdf
+├── ENA
+├── meta.csv
+├── meta.json
+├── meta.xml
+├── NCBI
+│   ├── SRR9875279
+│   │   └── SRR9875279.sra
+│   ├── SRR9875280
+│   │   └── SRR9875280.sra
+│   ├── SRR9875281
+│   │   └── SRR9875281.sra
+│   ├── SRR9875282
+│   │   └── SRR9875282.sra
+│   ├── SRR9875283
+│   │   └── SRR9875283.sra
+│   ├── SRR9875284
+│   │   └── SRR9875284.sra
+│   ├── SRR9875285
+│   │   └── SRR9875285.sra
+│   ├── SRR9875286
+│   │   └── SRR9875286.sra
+│   ├── SRR9875287
+│   │   └── SRR9875287.sra
+│   ├── SRR9875288
+│   │   └── SRR9875288.sra
+│   ├── SRR9875289
+│   │   └── SRR9875289.sra
+│   ├── SRR9875290
+│   │   └── SRR9875290.sra
+│   └── SRR9875291
+│       └── SRR9875291.sra
+├── ref
+│   └── GRCh38 -> /big_data/refgenomes/refdata-gex-GRCh38-2020-A
+├── screenlog.0
+├── scripts
+│   ├── merging.r
+│   ├── postprocess.r
+│   └── postprocess.r.old
+├── Snakefile
+├── SRR9875279.fqcheck
+├── SRR9875279_S1_L001_R1_001.fastq.gz
+├── SRR9875279_S1_L001_R2_001.fastq.gz
+├── SRR9875280.fqcheck
+├── SRR9875280_S1_L001_R1_001.fastq.gz
+├── SRR9875280_S1_L001_R2_001.fastq.gz
+├── SRR9875281.fqcheck
+├── SRR9875281_S1_L001_R1_001.fastq.gz
+├── SRR9875281_S1_L001_R2_001.fastq.gz
+├── SRR9875282.fqcheck
+├── SRR9875282_S1_L001_R1_001.fastq.gz
+├── SRR9875282_S1_L001_R2_001.fastq.gz
+├── SRR9875283.fqcheck
+├── SRR9875283_S1_L001_R1_001.fastq.gz
+├── SRR9875283_S1_L001_R2_001.fastq.gz
+├── SRR9875284.fqcheck
+├── SRR9875284_S1_L001_R1_001.fastq.gz
+├── SRR9875284_S1_L001_R2_001.fastq.gz
+├── SRR9875285.fqcheck
+├── SRR9875285_S1_L001_R1_001.fastq.gz
+├── SRR9875285_S1_L001_R2_001.fastq.gz
+├── SRR9875286.fqcheck
+├── SRR9875286_S1_L001_R1_001.fastq.gz
+├── SRR9875286_S1_L001_R2_001.fastq.gz
+├── SRR9875287.fqcheck
+├── SRR9875287_S1_L001_R1_001.fastq.gz
+├── SRR9875287_S1_L001_R2_001.fastq.gz
+├── SRR9875288.fqcheck
+├── SRR9875288_S1_L001_R1_001.fastq.gz
+├── SRR9875288_S1_L001_R2_001.fastq.gz
+├── SRR9875289.fqcheck
+├── SRR9875289_S1_L001_R1_001.fastq.gz
+├── SRR9875289_S1_L001_R2_001.fastq.gz
+├── SRR9875290.fqcheck
+├── SRR9875290_S1_L001_R1_001.fastq.gz
+├── SRR9875290_S1_L001_R2_001.fastq.gz
+├── SRR9875291.fqcheck
+├── SRR9875291_S1_L001_R1_001.fastq.gz
+├── SRR9875291_S1_L001_R2_001.fastq.gz
+└── test
+    ├── SRR9875285_1.fastq.gz
+    ├── SRR9875285S1_L001_R1_001.fastq.gz
+    └── SRR9875285S1_L001_R2_001.fastq.gz
+
+189 directories, 378 files
