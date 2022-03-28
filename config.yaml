@@ -1,6 +1,6 @@
 # project options
-gse: "GSE135194"
-
+gse: "GSE189120"
+meta_select: c("treatment", "timepoint")
 # cellranger options
 cr_path: "~/local/cellranger-6.1.1/bin/cellranger"
 ref: "ref/GRCh38"
