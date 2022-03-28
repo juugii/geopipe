@@ -4,6 +4,21 @@
 configfile: "config.yaml"
 print("GDS is : ", config["gse"])
 
+import yaml
+with open('config.yaml') as file:
+	try:
+		CONFIG = yaml.safe_load(file)
+	except yaml.YAMLError as mess:
+		print(mess)
+
+
+import os
+if os.path.exists("SRRlist.txt"):
+	print("SRRlist.txt file is present")
+else:
+	print("Generating SRR file list...")
+	os.system("scripts/download.sh "+CONFIG["gse"]+" SRRlist.txt")
+
 
 from numpy import loadtxt
 def get_srr_list(wildcards):
@@ -15,36 +30,37 @@ print("SRR ids are: ", SRRs)
 
 rule all:
 	input:
-		"SRRlist.txt",
+		# "SRRlist.txt",
                 expand("data/{srr}_S1_L001_R1_001.fastq.gz", srr=SRRs),
                 expand("data/{srr}_S1_L001_R2_001.fastq.gz", srr=SRRs),
 		expand("outs/seurat/{srr}.seurat", srr=SRRs),
 		"outs/seurat/integrated/UMAPs_"+config["gse"]+".pdf"
 
-rule get_SRRs:
-	input: "config.yaml"
-	params: config["gse"]
-	output: "SRRlist.txt"
-	threads: 1
-	shell:
-		"""
-		echo "Config file is:"
-		ls {input}
-		echo "Fetching SRRs..."
-		SRX=$(esearch -db gds -query {params} | efetch -format native | grep SRX | cut -d "=" -f 2)
-		SRR=$(for A in ${{SRX[@]}}; do esearch -db sra -query ${{A}} | efetch -format runinfo | grep -e "SRR" | cut -d "," -f 1; done)
-		echo ${{SRR}} > {output}
-		"""
+
+# rule get_SRRs:
+# 	input: "config.yaml"
+# 	params: config["gse"]
+# 	output: "SRRlist.txt"
+# 	threads: 1
+# 	shell:
+# 		"""
+# 		echo "Config file is:"
+# 		ls {input}
+# 		echo "Fetching SRRs..."
+# 		SRX=$(esearch -db gds -query {params} | efetch -format native | grep SRX | cut -d "=" -f 2)
+# 		SRR=$(for A in ${{SRX[@]}}; do esearch -db sra -query ${{A}} | efetch -format runinfo | grep -e "SRR" | cut -d "," -f 1; done)
+# 		echo ${{SRR}} > {output}
+# 		"""
 
 rule download_SRAs:
 	input: 
 		file="SRRlist.txt",
-		id=get_srr_list
+		# id=get_srr_list
 	output: temp("data/NCBI/{srr}/{srr}.sra")
 	threads: 1
 	shell:
 		"""
-		prefetch --max-size 100GB {input.id} && vdb-validate {input.id}
+		prefetch --max-size 100GB {wildcards.srr} && vdb-validate {wildcards.srr}
 		"""
 
 rule dump_fq:
@@ -147,6 +163,8 @@ rule preprocess:
 		file="outs/seurat/{srr}.seurat",
 		plot="outs/seurat/UMAP_{srr}.pdf",
 		log="outs/seurat/ppseurat_{srr}.log"
+	params:
+		meta=config["meta_select"]
 	threads: 16
 	script:
 		"scripts/postprocess.R"
@@ -161,7 +179,7 @@ rule integrate:
 	output:
 		file = "outs/seurat/integrated/seu_int_"+config["gse"]+".seurat",
 		plot = "outs/seurat/integrated/UMAPs_"+config["gse"]+".pdf",
-		log = "outs/seurat/integrated/integration_"+config["gse"]+".log"
+		log = "outs/seurat/integrated/integration_"+config["gse"]+".log",
 		matrix = protected("outs/seurat/integrated/readCountMatrix_"+config["gse"]+".csv")
 	threads: 32
 	params:

@@ -6,6 +6,7 @@ output <- snakemake@output[["file"]]
 fig <- snakemake@output[["plot"]]
 log <- snakemake@output[["log"]]
 sample <- snakemake@wildcards[["sample"]]
+metaselect <- snakemake@params["meta_select"]
 
 fcon <- file(log)
 sink(fcon, type = "output", append = TRUE)
@@ -21,7 +22,7 @@ library(SRAdb)
 mat <- Read10X_h5(input)
 
 # reading metadata
-meta <- read.csv('meta.csv')[ , c("Run", "Age", "sex", "subject")]
+meta <- read.csv('meta.csv')[ , c("Run", metaselect)]
 meta <- meta[ meta$Run == sample, ]
 meta <- meta[ rep(1, ncol(mat)), ]
 rownames(meta) <- colnames(mat)
