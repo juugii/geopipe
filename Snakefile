@@ -30,62 +30,35 @@ print("SRR ids are: ", SRRs)
 
 rule all:
 	input:
-		# "SRRlist.txt",
-                expand("data/{srr}_S1_L001_R1_001.fastq.gz", srr=SRRs),
-                expand("data/{srr}_S1_L001_R2_001.fastq.gz", srr=SRRs),
+                expand("fastq/{srr}_S1_L001_R1_001.fastq.gz", srr=SRRs),
+                expand("fastq/{srr}_S1_L001_R2_001.fastq.gz", srr=SRRs),
 		expand("outs/seurat/{srr}.seurat", srr=SRRs),
 		"outs/seurat/integrated/UMAPs_"+config["gse"]+".pdf"
 
 
-# rule get_SRRs:
-# 	input: "config.yaml"
-# 	params: config["gse"]
-# 	output: "SRRlist.txt"
-# 	threads: 1
-# 	shell:
-# 		"""
-# 		echo "Config file is:"
-# 		ls {input}
-# 		echo "Fetching SRRs..."
-# 		SRX=$(esearch -db gds -query {params} | efetch -format native | grep SRX | cut -d "=" -f 2)
-# 		SRR=$(for A in ${{SRX[@]}}; do esearch -db sra -query ${{A}} | efetch -format runinfo | grep -e "SRR" | cut -d "," -f 1; done)
-# 		echo ${{SRR}} > {output}
-# 		"""
-
-rule download_SRAs:
-	input: 
-		file="SRRlist.txt",
-		# id=get_srr_list
-	output: temp("data/NCBI/{srr}/{srr}.sra")
-	threads: 1
-	shell:
-		"""
-		prefetch --max-size 100GB {wildcards.srr} && vdb-validate {wildcards.srr}
-		"""
-
 rule dump_fq:
-	input: "data/NCBI/{srr}/{srr}.sra"
+	input:
+		file="SRRlist.txt"
 	output:
-		R1=temp("data/{srr}_1.fastq"),
-		R2="data/{srr}_2.fastq",
-		R3="data/{srr}_3.fastq"
+		R1="fastq/{srr}_1.fastq",
+		R2="fastq/{srr}_2.fastq",
+		R3="fastq/{srr}_3.fastq"
 	threads: 1
 	shell:
 		"""
-		cd data
-		fastq-dump --split-files */*.sra
-		cd ..
+		fastq-dump --split-files {wildcards.srr} --outdir fastq/
 		"""
+
 
 rule compress_fq:
 	input:
-                R1="data/{srr}_1.fastq",
-                R2="data/{srr}_2.fastq",
-                R3="data/{srr}_3.fastq"
+                R1="fastq/{srr}_1.fastq",
+                R2="fastq/{srr}_2.fastq",
+                R3="fastq/{srr}_3.fastq"
 
 	output:
-                CR1="data/{srr}_2.fastq.gz",
-                CR2="data/{srr}_3.fastq.gz"
+                CR1="fastq/{srr}_2.fastq.gz",
+                CR2="fastq/{srr}_3.fastq.gz"
 	threads: 1
 	message: "Compressing fastqs, that might take a while..."
 	shell:
@@ -95,13 +68,14 @@ rule compress_fq:
 		gzip {input.R3}
 		"""
 
+
 rule namefix_fq:
 	input:
-		R2="data/{srr}_2.fastq.gz",
-                R3="data/{srr}_3.fastq.gz"
+		R2="fastq/{srr}_2.fastq.gz",
+                R3="fastq/{srr}_3.fastq.gz"
 	output:
-		CRFQ1=protected("data/{srr}_S1_L001_R1_001.fastq.gz"),
-		CRFD2=protected("data/{srr}_S1_L001_R2_001.fastq.gz")
+		CRFQ1=protected("fastq/{srr}_S1_L001_R1_001.fastq.gz"),
+		CRFD2=protected("fastq/{srr}_S1_L001_R2_001.fastq.gz")
 	threads: 1
 	shell:
 		"""
@@ -111,15 +85,16 @@ rule namefix_fq:
 		mv ${{FILE2}} ${{FILE2//_3/_S1_L001_R2_001}}
 		"""
 
-FASTQ=glob_wildcards("data/{smp}_S1_L001_R2_001.fastq.gz").smp
+
+FASTQ=glob_wildcards("fastq/{smp}_S1_L001_R2_001.fastq.gz").smp
 print("Available fastq are: ", FASTQ)
 rule check_fq:
 	input:
-		R1="data/{srr}_S1_L001_R1_001.fastq.gz",
-		R2="data/{srr}_S1_L001_R2_001.fastq.gz"
+		R1="fastq/{srr}_S1_L001_R1_001.fastq.gz",
+		R2="fastq/{srr}_S1_L001_R2_001.fastq.gz"
 
 	output:
-		"data/{srr}.fqcheck"
+		"fastq/{srr}.fqcheck"
 	threads: 1
 	shell:
 		"""
@@ -132,33 +107,35 @@ rule check_fq:
 		fi
 		"""
 
-CHECK=glob_wildcards("data/{chk}.fqcheck").chk
+
+CHECK=glob_wildcards("fastq/{chk}.fqcheck").chk
 print("Checked samples are: ", CHECK)
 rule cr_mapping:
 	input:
-		"data/{srr}.fqcheck"
+		"fastq/{srr}.fqcheck"
 	output:
-		protected("data/cr_{srr}/outs/filtered_feature_bc_matrix.h5")
+		protected("outs/cellranger/cr_{srr}/outs/filtered_feature_bc_matrix.h5")
 
 	log:
-		"crmap_{srr}.log"
+		"outs/cellranger/crmap_{srr}.log"
 	params:
 		path = config["cr_path"],
 		ref = config["ref"],
 	threads: 16
 	shell:
 		"""
-		cd data/
+		cd outs/cellranger
 		rm -fr cr_{wildcards.srr}
-		{params.path} count --id=cr_{wildcards.srr} --transcriptome={params.ref} --fastqs=./ --sample={wildcards.srr} &> {log}
-		cd ..
+		{params.path} count --id=cr_{wildcards.srr} --transcriptome={params.ref} --fastqs=../../fastq --sample={wildcards.srr} &> {log}
+		cd ../..
 		"""
 
-MAPPED=glob_wildcards("data/cr_{map}/outs/filtered_feature_bc_matrix.h5").map
+
+MAPPED=glob_wildcards("outs/cellranger/cr_{map}/outs/filtered_feature_bc_matrix.h5").map
 print("Mapped samples are: ", MAPPED)
 rule preprocess:
 	input:
-		"data/cr_{srr}/outs/filtered_feature_bc_matrix.h5"
+		"outs/cellranger/cr_{srr}/outs/filtered_feature_bc_matrix.h5"
 	output:
 		file="outs/seurat/{srr}.seurat",
 		plot="outs/seurat/UMAP_{srr}.pdf",
