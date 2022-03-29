@@ -171,5 +171,5 @@ onsuccess:
 
 onerror:
 	print("WARNING: an error occured somewhere...")
-	shell("{log} > ERROR.log")
+	shell("cat {log} > ERROR.log")
 
