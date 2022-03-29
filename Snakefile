@@ -117,7 +117,7 @@ rule cr_mapping:
 		protected("outs/cellranger/cr_{srr}/outs/filtered_feature_bc_matrix.h5")
 
 	log:
-		"outs/cellranger/crmap_{srr}.log"
+		"crmap_{srr}.log"
 	params:
 		path = config["cr_path"],
 		ref = config["ref"],
